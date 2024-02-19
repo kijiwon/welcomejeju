@@ -1,0 +1,21 @@
+.nav {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav p {
+  width: 140px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.nav p:hover {
+  border-bottom: 3px solid #ffb900;
+  padding-bottom: 5px;
+}
