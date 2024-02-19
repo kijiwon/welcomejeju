@@ -1,6 +1,7 @@
 import { Inter, Gamja_Flower } from "next/font/google";
 import styles from "../styles/page.module.css";
 import Header from "@/components/Header";
+import Slider from "@/components/Slider";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div className={styles.body}>
       <Header />
+      <Slider />
     </div>
   );
 }
