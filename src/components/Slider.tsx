@@ -8,6 +8,12 @@ import "swiper/css/navigation";
 import styles from "../styles/slider.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Gamja_Flower } from "next/font/google";
+
+const gamja_flower = Gamja_Flower({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Slider() {
   const [data, setData] = useState([]);
@@ -28,7 +34,7 @@ export default function Slider() {
   }, []);
   console.log(data);
   return (
-    <div className={styles.slide_wrapper}>
+    <div className={`${styles.slide_wrapper} ${gamja_flower.className}`}>
       <Swiper
         className={styles.swiper}
         spaceBetween={30}
@@ -48,7 +54,15 @@ export default function Slider() {
           data.map((it) => (
             <SwiperSlide key={it.contentsid}>
               <div className={styles.img_wrapper}>
-                <img src={it.repPhoto.photoid.imgpath} />
+                <img
+                  className={styles.slide_img}
+                  src={it.repPhoto.photoid.imgpath}
+                  alt="slide image"
+                />
+              </div>
+              <div className={styles.info_wrapper}>
+                <p>{it.title}</p>
+                <button>더 알아보기</button>
               </div>
             </SwiperSlide>
           ))}
